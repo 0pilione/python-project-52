@@ -12,3 +12,9 @@ install:
 
 start:
 	python manage.py runserver
+
+collectstatic:
+    python manage.py collectstatic --noinput
+
+migrate:
+	python manage.py migrate
