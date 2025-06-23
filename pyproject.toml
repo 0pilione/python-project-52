@@ -4,4 +4,13 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+'asgiref==3.8.1',
+'Django==5.2.3',
+'dotenv==0.9.9',
+'gunicorn==23.0.0',
+'packaging==25.0',
+'python-dotenv==1.1.0',
+'sqlparse==0.5.3',
+'typing_extensions==4.14.0',
+]
