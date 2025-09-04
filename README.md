@@ -27,30 +27,30 @@ Using the service requires authorization.
 
 Clone the repository:
 
-    - git clone https://github.com/0pilione/python-project-52.git
+    git clone https://github.com/0pilione/python-project-52.git
 cd python-project-52
 
 Create and activate virtual environment:
 
-    - python -m venv .venv
-    - source .venv/bin/activate
+    python -m venv .venv
+    source .venv/bin/activate
 
 Install the required dependencies using uv: 
 
-make install
+    make install
 
 Configure environment variables (create .env file):
 
-SECRET_KEY=your-secret-key
-DATABASE_URL=sqlite:///db.sqlite3
+    SECRET_KEY=your-secret-key
+    DATABASE_URL=sqlite:///db.sqlite3
 
 Apply migrations:
 
-python manage.py migrate
+    python manage.py migrate
 
 ### Run
 
-'make start'
+    make start
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/0pilione/python-project-52/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/0pilione/python-project-52/actions)
