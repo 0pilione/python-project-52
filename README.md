@@ -32,8 +32,8 @@ cd python-project-52
 
 Create and activate virtual environment:
 
-''' python -m venv .venv
-source .venv/bin/activate '''
+'''\python -m venv .venv
+source .venv/bin/activate\'''
 
 Install the required dependencies using uv: 
 
