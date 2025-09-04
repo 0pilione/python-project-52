@@ -27,8 +27,8 @@ Using the service requires authorization.
 
 Clone the repository:
 
-'git clone https://github.com/0pilione/python-project-52.git
-cd python-project-52'
+git clone https://github.com/0pilione/python-project-52.git
+cd python-project-52
 
 Create and activate virtual environment:
 
@@ -37,12 +37,12 @@ source .venv/bin/activate
 
 Install the required dependencies using uv: 
 
-'make install'
+make install
 
 Configure environment variables (create .env file):
 
-'SECRET_KEY=your-secret-key
-DATABASE_URL=sqlite:///db.sqlite3'
+SECRET_KEY=your-secret-key
+DATABASE_URL=sqlite:///db.sqlite3
 
 Apply migrations:
 
