@@ -32,21 +32,21 @@ cd python-project-52
 
 Create and activate virtual environment:
 
-python -m venv .venv
-source .venv/bin/activate
+''' python -m venv .venv
+source .venv/bin/activate '''
 
 Install the required dependencies using uv: 
 
-make install
+'make install'
 
 Configure environment variables (create .env file):
 
-SECRET_KEY=your-secret-key
-DATABASE_URL=sqlite:///db.sqlite3
+''' SECRET_KEY=your-secret-key
+DATABASE_URL=sqlite:///db.sqlite3 '''
 
 Apply migrations:
 
-python manage.py migrate
+''' python manage.py migrate '''
 
 ### Run
 
