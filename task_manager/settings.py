@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 import os
+import sys
 from pathlib import Path
 
 from django.contrib.messages import constants as messages
@@ -21,6 +22,10 @@ load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+if str(BASE_DIR) not in sys.path:
+    sys.path.insert(0, str(BASE_DIR))
+    
 
 
 # Quick-start development settings - unsuitable for production
@@ -65,7 +70,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'task_manager',
-    'task_manager.user.apps.UserConfig',
+    'task_manager.user',
     'task_manager.status',
     'task_manager.tasks',
     'task_manager.labels',
