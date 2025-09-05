@@ -26,3 +26,11 @@ dependencies = [
 
 [tool.setuptools]
 packages = ["task_manager"]
+
+[tool.uv.sources]
+hexlet-code = { workspace = true }
+
+[dependency-groups]
+dev = [
+    "hexlet-code",
+]
