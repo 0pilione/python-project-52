@@ -57,7 +57,7 @@ class TaskTestCase(TestCase):
             description="description",
             status=self.status,
             author=self.author,
-            maker=self.maker,
+            executor=self.maker,
         )
 
         self.task_2 = Tasks.objects.create(
@@ -65,7 +65,7 @@ class TaskTestCase(TestCase):
             description="descript",
             status=self.status,
             author=self.author_2,
-            maker=self.maker,
+            executor=self.maker,
         )
 
         self.task_3 = Tasks.objects.create(
@@ -73,7 +73,7 @@ class TaskTestCase(TestCase):
             description="desc",
             status=self.status_2,
             author=self.author_2,
-            maker=self.maker_2,
+            executor=self.maker_2,
         )
 
         labels_to_add = Labels.objects.filter(name__in=['pog', 'gop'])
@@ -88,7 +88,7 @@ class TaskTestCase(TestCase):
         self.assertEqual(self.task.name, "John")
         self.assertEqual(self.task.status.name, "In progress")
         self.assertEqual(self.task.author.username, "pork")
-        self.assertEqual(self.task.maker.username, "boyer")
+        self.assertEqual(self.task.executor.username, "boyer")
 
     def test_task_update(self):
         url = reverse('update_task', kwargs={'pk': self.task.id})
@@ -133,7 +133,7 @@ class TaskTestCase(TestCase):
     def test_filter(self):
         self.client.force_login(self.author)
         filtered = TaskFilter(
-            data={'maker': self.maker.first_name},
+            data={'executor': self.maker.first_name},
             queryset=self.queryset
         )
         self.assertEqual(filtered.qs.count(), 3)

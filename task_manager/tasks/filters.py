@@ -21,7 +21,7 @@ class TaskFilter(django_filters.FilterSet):
         widget=forms.Select(attrs={'class': 'form-select'})
     )
 
-    maker = django_filters.ModelChoiceFilter(
+    executor = django_filters.ModelChoiceFilter(
         queryset=Userr.objects.all(),
         label=_('Author'),
         widget=forms.Select(attrs={'class': 'form-select'})
@@ -36,7 +36,7 @@ class TaskFilter(django_filters.FilterSet):
 
     class Meta:
         model = Tasks
-        fields = ['maker', 'status', 'labels', 'users_tasks']
+        fields = ['executor', 'status', 'labels', 'users_tasks']
 
     def filter_users_tasks(self, queryset, name, value):
         if value and self.request.user.is_authenticated:

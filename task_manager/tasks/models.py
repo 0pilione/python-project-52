@@ -8,7 +8,7 @@ from task_manager.user.models import Userr
 
 class Tasks(models.Model):
     name = models.CharField(max_length=150)
-    description = models.CharField(_("description"))
+    description = models.CharField(_("description"), max_length=1000)
     status = models.ForeignKey(
         Statuses,
         related_name='sts',
@@ -19,7 +19,7 @@ class Tasks(models.Model):
         related_name='task_author',
         null=False,
         on_delete=models.PROTECT)
-    maker = models.ForeignKey(
+    executor = models.ForeignKey(
         Userr,
         related_name='task_maker',
         null=False,

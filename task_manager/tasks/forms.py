@@ -21,7 +21,7 @@ class CreateTaskForm(forms.ModelForm):
         widget=forms.Select(attrs={'form-select form-select-sm'})
     )
 
-    maker = forms.ModelChoiceField(
+    executor = forms.ModelChoiceField(
         queryset=Userr.objects.all(),
         label=_('Executor'),
         required=True,
@@ -53,7 +53,7 @@ class CreateTaskForm(forms.ModelForm):
 
     class Meta:
         model = Tasks
-        fields = ["name", "description", "status", "maker", "labels"]
+        fields = ["name", "description", "status", "executor", "labels"]
         labels = {
             'name': _('Name'),
             'description': _('Description'),

@@ -102,15 +102,15 @@ class UserDeleteTest(TestCase):
         self.delete_url = reverse('delete_user', kwargs={'pk': self.user.pk})
 
 
-def test_authenticated_user_can_delete_self(self):
-    self.client.force_login(self.user)
+    def test_authenticated_user_can_delete_self(self):
+        self.client.force_login(self.user)
 
-    delete_url = reverse('delete_user', kwargs={'pk': self.user.pk})
+        delete_url = reverse('delete_user', kwargs={'pk': self.user.pk})
 
-    response = self.client.post(delete_url, follow=True)
-    self.assertFalse(User.objects.filter(pk=self.user.pk).exists())
-    messages_list = [str(m) for m in response.context['messages']]
-    self.assertIn(_('User successfully deleted'), messages_list)
+        response = self.client.post(delete_url, follow=True)
+        self.assertFalse(User.objects.filter(pk=self.user.pk).exists())
+        messages_list = [str(m) for m in response.context['messages']]
+        self.assertIn(_('User successfully deleted'), messages_list)
 
     def test_unauthenticated_user_cannot_delete(self):
         response = self.client.post(self.delete_url)
