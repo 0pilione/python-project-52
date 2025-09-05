@@ -195,7 +195,7 @@ requires-dist = [
     { name = "autopep8", specifier = ">=2.3.2" },
     { name = "certifi", specifier = ">=2025.8.3" },
     { name = "charset-normalizer", specifier = ">=3.4.3" },
-    { name = "django", specifier = "==4.2.24" },
+    { name = "django", specifier = ">=4.2,<5.0" },
     { name = "django-bootstrap5", specifier = ">=25.2" },
     { name = "django-filter", specifier = ">=25.1" },
     { name = "dotenv", specifier = ">=0.9.9" },
