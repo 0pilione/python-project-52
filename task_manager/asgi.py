@@ -11,6 +11,12 @@ import os
 
 from django.core.asgi import get_asgi_application
 
+import sys
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(BASE_DIR))
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'task_manager.settings')
 
 application = get_asgi_application()
