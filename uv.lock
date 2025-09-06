@@ -62,6 +62,18 @@ wheels = [
 ]
 
 [[package]]
+name = "dj-database-url"
+version = "3.0.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "django" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/75/05/2ec51009f4ce424877dbd8ad95868faec0c3494ed0ff1635f9ab53d9e0ee/dj_database_url-3.0.1.tar.gz", hash = "sha256:8994961efb888fc6bf8c41550870c91f6f7691ca751888ebaa71442b7f84eff8", size = 12556 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/aa/5e/86a43c6fdaa41c12d58e4ff3ebbfd6b71a7cb0360a08614e3754ef2e9afb/dj_database_url-3.0.1-py3-none-any.whl", hash = "sha256:43950018e1eeea486bf11136384aec0fe55b29fe6fd8a44553231b85661d9383", size = 8808 },
+]
+
+[[package]]
 name = "django"
 version = "4.2.24"
 source = { registry = "https://pypi.org/simple" }
@@ -154,6 +166,7 @@ dependencies = [
     { name = "autopep8" },
     { name = "certifi" },
     { name = "charset-normalizer" },
+    { name = "dj-database-url" },
     { name = "django" },
     { name = "django-bootstrap5" },
     { name = "django-filter" },
@@ -189,6 +202,7 @@ requires-dist = [
     { name = "autopep8", specifier = ">=2.3.2" },
     { name = "certifi", specifier = ">=2025.8.3" },
     { name = "charset-normalizer", specifier = ">=3.4.3" },
+    { name = "dj-database-url", specifier = ">=3.0.1" },
     { name = "django", specifier = "==4.2.24" },
     { name = "django-bootstrap5", specifier = ">=25.2" },
     { name = "django-filter", specifier = ">=25.1" },
