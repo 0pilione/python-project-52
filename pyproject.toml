@@ -37,9 +37,6 @@ dependencies = [
     "urllib3>=2.5.0",
 ]
 
-[tool.setuptools]
-packages = ["task_manager"]
-
 [build-system] 
 requires = ["hatchling"]
 build-backend = "hatchling.build"
