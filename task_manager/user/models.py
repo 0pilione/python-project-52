@@ -35,6 +35,7 @@ class Userr(AbstractUser):
     created_at = models.DateTimeField(_("created at"), auto_now_add=True)
 
     class Meta:
+        db_table = 'user_user'
         swappable = 'AUTH_USER_MODEL'
 
     groups = models.ManyToManyField(
