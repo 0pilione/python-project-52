@@ -36,7 +36,6 @@ class Userr(AbstractUser):
 
     class Meta:
         swappable = 'AUTH_USER_MODEL'
-        db_table = "user_userr"
 
     groups = models.ManyToManyField(
         Group,
