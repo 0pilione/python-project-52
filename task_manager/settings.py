@@ -59,6 +59,8 @@ LOCALE_PATHS = [
 
 # Application definition
 
+AUTH_USER_MODEL = 'user.Userr'
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -196,8 +198,6 @@ PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
     'django.contrib.auth.hashers.ScryptPasswordHasher',
 ]
-
-AUTH_USER_MODEL = 'user.Userr'
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
