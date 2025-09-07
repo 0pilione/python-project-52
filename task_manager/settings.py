@@ -61,14 +61,14 @@ LOCALE_PATHS = [
 AUTH_USER_MODEL = 'user.Userr'
 
 INSTALLED_APPS = [
+    'task_manager',
+    'task_manager.user',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'task_manager',
-    'task_manager.user',
     'task_manager.status',
     'task_manager.tasks',
     'task_manager.labels',
@@ -129,7 +129,8 @@ DATABASES = {
     }
 }
 
-if os.getenv('DATABASE_URL'):
+if 'DATABASE_URL' in os.environ:
+    import dj_database_url
     DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 # Password validation
