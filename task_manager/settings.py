@@ -61,8 +61,8 @@ LOCALE_PATHS = [
 AUTH_USER_MODEL = 'user.User'
 
 INSTALLED_APPS = [
-    'task_manager',          
-    'task_manager.user',     
+    'task_manager.user',
+    'task_manager',               
     'task_manager.status',   
     'task_manager.tasks',    
     'task_manager.labels',
