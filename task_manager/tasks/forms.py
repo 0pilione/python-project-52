@@ -4,8 +4,9 @@ from django.utils.translation import gettext_lazy as _
 from task_manager.labels.models import Labels
 from task_manager.status.models import Statuses
 from task_manager.tasks.models import Tasks
-from task_manager.user.models import Userr
+from django.contrib.auth import get_user_model
 
+User = get_user_model()
 
 class CreateTaskForm(forms.ModelForm):
 
@@ -22,7 +23,7 @@ class CreateTaskForm(forms.ModelForm):
     )
 
     executor = forms.ModelChoiceField(
-        queryset=Userr.objects.all(),
+        queryset=User.objects.all(),
         label=_('Executor'),
         required=True,
         widget=forms.Select(attrs={'form-select form-select-sm'})

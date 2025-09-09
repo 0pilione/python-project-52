@@ -58,7 +58,7 @@ LOCALE_PATHS = [
 
 # Application definition
 
-AUTH_USER_MODEL = 'user.Userr'
+AUTH_USER_MODEL = 'user.User'
 
 INSTALLED_APPS = [
     'task_manager',

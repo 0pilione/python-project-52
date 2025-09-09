@@ -5,7 +5,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
-class UserrManager(BaseUserManager):
+class UserManager(BaseUserManager):
     use_in_migrations = True
 
     def create_user(self, username, password=None, **extra_fields):
@@ -20,9 +20,9 @@ class UserrManager(BaseUserManager):
         return self.create_user(username, password, **extra_fields)
 
 
-class Userr(AbstractUser):
+class User(AbstractUser):
 
-    objects = UserrManager()
+    objects = UserManager()
 
     first_name = models.CharField(_("first name"), max_length=150)
     last_name = models.CharField(_("last name"), max_length=150)
