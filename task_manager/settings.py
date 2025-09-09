@@ -129,6 +129,7 @@ DATABASES = {
         default=DATABASE_URL,
         conn_max_age=600,
         ssl_require=not DEBUG and not DATABASE_URL.startswith("sqlite")
+
     )
 }
 
