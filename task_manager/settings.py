@@ -62,7 +62,7 @@ AUTH_USER_MODEL = 'user.Userr'
 
 INSTALLED_APPS = [
     'task_manager',
-    'task_manager.user.apps.UserConfig',
+    'task_manager.user',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
