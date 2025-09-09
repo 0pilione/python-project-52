@@ -1,5 +1,4 @@
-from django.contrib.auth.models import (AbstractUser, BaseUserManager, Group,
-                                        Permission)
+from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db import models
 
 from django.utils.translation import gettext_lazy as _
@@ -22,12 +21,10 @@ class UserManager(BaseUserManager):
 
 class User(AbstractUser):
 
-    objects = UserManager()
-
     created_at = models.DateTimeField(_("created at"), auto_now_add=True)
 
     class Meta:
-        swappable = 'AUTH_USER_MODEL'
+        pass
 
     def __str__(self):
-        return self.first_name
+        return self.first_name + self.last_name
