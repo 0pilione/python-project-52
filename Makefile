@@ -17,4 +17,5 @@ collectstatic:
 	python manage.py collectstatic --noinput
 
 migrate:
-	python manage.py migrate
+	uv run python manage.py makemigrations --noinput && \
+	uv run python manage.py migrate --noinput
