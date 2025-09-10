@@ -110,7 +110,7 @@ class UserDeleteTest(TestCase):
         response = self.client.post(delete_url, follow=True)
         self.assertFalse(User.objects.filter(pk=self.user.pk).exists())
         messages_list = [str(m) for m in response.context['messages']]
-        self.assertIn(_('User successfully deleted'), messages_list)
+        self.assertIn(_('User succesfully deleted'), messages_list)
 
     def test_unauthenticated_user_cannot_delete(self):
         response = self.client.post(self.delete_url)

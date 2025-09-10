@@ -1,30 +1,20 @@
-from django.contrib.auth.models import AbstractUser, BaseUserManager
+from django.contrib.auth.models import AbstractUser
 from django.db import models
-
 from django.utils.translation import gettext_lazy as _
 
 
-class UserManager(BaseUserManager):
-    use_in_migrations = True
-
-    def create_user(self, username, password=None, **extra_fields):
-        user = self.model(username=username, **extra_fields)
-        user.set_password(password)
-        user.save(using=self._db)
-        return user
-
-    def create_superuser(self, username, password=None, **extra_fields):
-        extra_fields.setdefault('is_staff', True)
-        extra_fields.setdefault('is_superuser', True)
-        return self.create_user(username, password, **extra_fields)
-
-
 class User(AbstractUser):
-
-    created_at = models.DateTimeField(_("created at"), auto_now_add=True)
-
-    class Meta:
-        pass
+    first_name = models.CharField(
+        max_length=150,
+        blank=False,
+        verbose_name=_('First Name')
+    )
+    last_name = models.CharField(
+        max_length=150,
+        blank=False,
+        verbose_name=_('Last Name')
+    )
+    USERNAME_FIELD = 'username'
 
     def __str__(self):
-        return self.first_name + self.last_name
+        return f'{self.first_name} {self.last_name}'

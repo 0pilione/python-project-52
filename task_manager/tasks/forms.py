@@ -19,14 +19,14 @@ class CreateTaskForm(forms.ModelForm):
         queryset=Statuses.objects.all(),
         label=_('Status'),
         required=True,
-        widget=forms.Select(attrs={'form-select form-select-sm'})
+        widget=forms.Select(attrs={'class': 'form-select form-select-sm'})
     )
 
     executor = forms.ModelChoiceField(
         queryset=User.objects.all(),
         label=_('Executor'),
         required=True,
-        widget=forms.Select(attrs={'form-select form-select-sm'})
+        widget=forms.Select(attrs={'class': 'form-select form-select-sm'})
     )
 
     labels = forms.ModelMultipleChoiceField(
@@ -67,7 +67,7 @@ class CreateTaskForm(forms.ModelForm):
             ),
             'description': forms.Textarea(attrs={
                 'placeholder': _('Description'),
-                'class': 'form-control', 'rows': 3
+                'class': 'form-control'
                 }
             ),
         }

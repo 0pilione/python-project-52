@@ -1,10 +1,12 @@
 from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
+from django.http import HttpResponseForbidden
 
 from task_manager.mixins import MessageMixin
 
@@ -56,11 +58,12 @@ class UserUpdateView(LoginRequiredMixin, UserPassesTestMixin,
         return context
 
 
-class UserDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+class UserDeleteView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, DeleteView):
     model = get_user_model()
     template_name = 'user_template/delete.html'
     success_url = reverse_lazy('home')
     permission_denied_template = 'usrs'
+    success_message = _('User successfully deleted')
     login_url = '/login/'
 
     def test_func(self):
@@ -72,14 +75,14 @@ class UserDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
         user.delete()
 
-        messages.success(self.request, _('User succesfully deleted'))
         return redirect(self.success_url)
 
     def handle_no_permission(self):
         messages.error(
-            self.request,
-            _('You do not have permission to modify another user.'))
-        return redirect(self.permission_denied_template)
+                self.request,
+                _('You do not have permission to modify another user.')
+            )
+        return HttpResponseForbidden("Forbidden")
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
