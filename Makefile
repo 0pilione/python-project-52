@@ -1,21 +1,26 @@
 build:
-	./build.sh
+    ./build.sh
 
 render-start:
-	gunicorn task_manager.wsgi
+    gunicorn task_manager.wsgi
 
 lint:
-	uv run flake8 task_manager
+    uv run flake8 task_manager
 
 install:
-	uv sync
+    uv sync
 
 start:
-	python manage.py runserver
+    python manage.py runserver
 
 collectstatic:
-	python manage.py collectstatic --noinput
+    python manage.py collectstatic --noinput
 
 migrate:
-	uv run python manage.py makemigrations --noinput && \
-	uv run python manage.py migrate --noinput
+    uv run python manage.py migrate --noinput
+
+test: migrate
+    uv run python manage.py test
+
+test-verbose: migrate
+    uv run python manage.py test --verbosity=2
