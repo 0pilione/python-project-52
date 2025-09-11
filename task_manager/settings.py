@@ -62,17 +62,17 @@ AUTH_USER_MODEL = 'user.User'
 
 INSTALLED_APPS = [
     'django.contrib.auth',
-    'task_manager.user',
-    'task_manager',               
-    'task_manager.status',   
-    'task_manager.tasks',    
-    'task_manager.labels',
-    'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_bootstrap5',
     'django_filters',
+    'task_manager',
+    'task_manager.user',
+    'task_manager.status',
+    'task_manager.tasks',
+    'task_manager.labels',
 ]
 
 MIDDLEWARE = [
