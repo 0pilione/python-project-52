@@ -61,7 +61,9 @@ LOCALE_PATHS = [
 AUTH_USER_MODEL = 'user.User'
 
 INSTALLED_APPS = [
+    'task_manager.user',
     'django.contrib.auth',
+    'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -69,8 +71,6 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'django_filters',
     'task_manager',
-    'task_manager.user',
-    'django.contrib.admin',
     'task_manager.status',
     'task_manager.tasks',
     'task_manager.labels',
