@@ -11,10 +11,10 @@ install:
     uv sync
 
 start:
-    python manage.py runserver
+    uv python manage.py runserver
 
 collectstatic:
-    python manage.py collectstatic --noinput
+    uv python manage.py collectstatic --noinput
 
 migrate:
     uv run python manage.py migrate --noinput
