@@ -10,7 +10,7 @@ from django.http import HttpResponseForbidden
 
 from task_manager.mixins import MessageMixin
 
-from .forms import RegistrationUserForm, UpdateUserForm
+from task_manager.users.forms import RegistrationUserForm, UpdateUserForm
 
 
 class UsersView(ListView):
