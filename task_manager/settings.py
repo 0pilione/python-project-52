@@ -132,7 +132,7 @@ if DATABASE_URL.startswith("sqlite"):
 else:
     DATABASES = {
         "default": dj_database_url.parse(DATABASE_URL, conn_max_age=600, ssl_require=not DEBUG)
-    }
+    } 
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
