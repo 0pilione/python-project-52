@@ -1467,7 +1467,6 @@ msgid "Users"
 msgstr "Пользователи"
 
 #: task_manager/templates/base_template/index.html:32
-#: task_manager/templates/base_template/login.html:16
 #: task_manager/templates/base_template/login.html:24
 msgid "Login"
 msgstr "Вход"
@@ -1545,7 +1544,7 @@ msgid ""
 "\n"
 "    Are you sure you want to delete task %(task_name)s?\n"
 "    "
-msgstr "Вы уeверены, что хотите удалить задачу?"
+msgstr "Вы уверены, что хотите удалить задачу?"
 
 #: task_manager/templates/task_template/tasks.html:19
 msgid "Apply filters"
