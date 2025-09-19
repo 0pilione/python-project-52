@@ -48,6 +48,7 @@ class LabelCreate(LoginRequiredMixin, MessageMixin, CreateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title_text'] = _("Create label")
+        context['button_text'] = _('Create')
         return context
 
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-19 15:59+0000\n"
+"POT-Creation-Date: 2025-09-19 16:52+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,7 +66,12 @@ msgstr "Метка успешно создана"
 msgid "Create label"
 msgstr "Создать метку"
 
-#: task_manager/labels/views.py:60
+#: task_manager/labels/views.py:51 task_manager/status/views.py:53
+#: task_manager/tasks/views.py:59
+msgid "Create"
+msgstr "Создать"
+
+#: task_manager/labels/views.py:61
 msgid "The label was successfully deleted"
 msgstr "Метка успешно удалена"
 
@@ -110,22 +115,18 @@ msgstr "Изменить статус"
 msgid "Status created successfully"
 msgstr "Статус успешно создан"
 
-#: task_manager/status/views.py:53 task_manager/tasks/views.py:59
-msgid "Create"
-msgstr "Создать"
-
 #: task_manager/status/views.py:54
 #: task_manager/templates/status_template/statuses.html:9
 msgid "Create status"
 msgstr "Создать статус"
 
-#: task_manager/status/views.py:71
-msgid "Cannot delete status because it is in use"
-msgstr "Нельзя удалить статус, потому что он используется"
-
-#: task_manager/status/views.py:80
+#: task_manager/status/views.py:63
 msgid "Status deleted successfully!"
 msgstr "Статус успешно удален"
+
+#: task_manager/status/views.py:72
+msgid "Cannot delete status because it is in use"
+msgstr "Нельзя удалить статус, потому что он используется"
 
 #: task_manager/tasks/filters.py:17 task_manager/tasks/forms.py:37
 #: task_manager/templates/base_template/index.html:21
