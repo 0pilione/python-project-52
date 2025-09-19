@@ -6,7 +6,6 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
-from django.http import HttpResponseForbidden
 
 from task_manager.mixins import MessageMixin
 
@@ -62,7 +61,7 @@ class UserDeleteView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixi
     model = get_user_model()
     template_name = 'user_template/delete.html'
     success_url = reverse_lazy('usrs')
-    permission_denied_template = 'usrs'
+    permission_denied_template = reverse_lazy('usrs')
     success_message = _('User successfully deleted')
     login_url = '/login/'
 
@@ -82,7 +81,7 @@ class UserDeleteView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixi
                 self.request,
                 _('You do not have permission to modify another user.')
             )
-        return HttpResponseForbidden("Forbidden")
+        return redirect(self.permission_denied_template)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
