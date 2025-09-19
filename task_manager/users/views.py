@@ -29,7 +29,7 @@ class UserCreateView(MessageMixin, CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['button_text'] = _("Create")
+        context['button_text'] = _("Register")
         return context
 
 
