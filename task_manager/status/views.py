@@ -76,4 +76,5 @@ class StatusDelete(LoginRequiredMixin, MessageMixin, DeleteView):
         return super().dispatch(request, *args, **kwargs)
 
     def delete(self, request, *args, **kwargs):
-        return super().delete(request, *args, **kwargs)
+        super().delete(request, *args, **kwargs)
+        return redirect(self.success_url)
