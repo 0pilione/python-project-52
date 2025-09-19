@@ -55,11 +55,12 @@ class StatusCreate(LoginRequiredMixin, MessageMixin, CreateView):
         return context
 
 
-class StatusDelete(LoginRequiredMixin, DeleteView):
+class StatusDelete(LoginRequiredMixin, MessageMixin, DeleteView):
     model = Statuses
     template_name = 'status_template/status_delete.html'
     success_url = reverse_lazy('status')
     context_object_name = 'name'
+    success_message = _('Status deleted successfully!')
     login_url = '/login/'
 
     def dispatch(self, request, *args, **kwargs):
@@ -75,8 +76,4 @@ class StatusDelete(LoginRequiredMixin, DeleteView):
         return super().dispatch(request, *args, **kwargs)
 
     def delete(self, request, *args, **kwargs):
-        messages.success(
-            request,
-            _('Status deleted successfully!')
-        )
         return super().delete(request, *args, **kwargs)
