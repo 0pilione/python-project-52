@@ -23,7 +23,7 @@ class UserCreateView(MessageMixin, CreateView):
     model = get_user_model()
     form_class = RegistrationUserForm
     template_name = 'user_template/create.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('login')
     success_message = _('Registration successful!')
     error_message = None
 
