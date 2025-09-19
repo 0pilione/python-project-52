@@ -61,7 +61,7 @@ class UserUpdateView(LoginRequiredMixin, UserPassesTestMixin,
 class UserDeleteView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, DeleteView):
     model = get_user_model()
     template_name = 'user_template/delete.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('usrs')
     permission_denied_template = 'usrs'
     success_message = _('User successfully deleted')
     login_url = '/login/'
