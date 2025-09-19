@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-19 13:36+0000\n"
+"POT-Creation-Date: 2025-09-19 15:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -207,16 +207,6 @@ msgstr "Задачу может удалить только ее автор"
 msgid "Task deleted successfully!"
 msgstr "Задача успешно удалена"
 
-#: task_manager/templates/base_template/base_delete.html:16
-#: task_manager/templates/base_template/users.html:25
-#: task_manager/templates/label_template/labels.html:15
-#: task_manager/templates/status_template/statuses.html:29
-#: task_manager/templates/task_template/task.html:17
-#: task_manager/templates/task_template/tasks.html:56
-#: task_manager/templates/user_template/delete.html:18
-msgid "Delete"
-msgstr "Да, удалить"
-
 #: task_manager/templates/base_template/index.html:8
 #: task_manager/templates/base_template/index.html:16
 msgid "Task Manager"
@@ -261,7 +251,7 @@ msgstr "Практические курсы по программировани�
 msgid "Learn more"
 msgstr "Узнать больше"
 
-#: task_manager/templates/base_template/login.html:24
+#: task_manager/templates/base_template/login.html:29
 msgid "Log in"
 msgstr ""
 
@@ -283,6 +273,14 @@ msgstr "Полное имя"
 #: task_manager/templates/task_template/tasks.html:36
 msgid "Created at"
 msgstr "Дата создания"
+
+#: task_manager/templates/base_template/users.html:25
+#: task_manager/templates/label_template/labels.html:15
+#: task_manager/templates/status_template/statuses.html:29
+#: task_manager/templates/task_template/task.html:17
+#: task_manager/templates/task_template/tasks.html:56
+msgid "Delete"
+msgstr "Да, удалить"
 
 #: task_manager/templates/label_template/label_delete.html:4
 msgid "Delete Label"
@@ -342,6 +340,10 @@ msgstr "Удаление пользователя"
 #: task_manager/templates/user_template/delete.html:14
 msgid "Are you sure you want to delete user "
 msgstr "Вы уверены, что хотите удалить пользователя"
+
+#: task_manager/templates/user_template/delete.html:18
+msgid "Yes, delete"
+msgstr "Да, удалить"
 
 #: task_manager/templates/user_template/update.html:4
 msgid "Update user"
