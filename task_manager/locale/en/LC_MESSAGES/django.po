@@ -215,7 +215,7 @@ msgstr "Задача успешно удалена"
 #: task_manager/templates/task_template/tasks.html:56
 #: task_manager/templates/user_template/delete.html:18
 msgid "Delete"
-msgstr ""
+msgstr "Удалить"
 
 #: task_manager/templates/base_template/index.html:8
 #: task_manager/templates/base_template/index.html:16
@@ -317,13 +317,11 @@ msgid "Delete task"
 msgstr "Удаление задачи"
 
 #: task_manager/templates/task_template/task_delete.html:5
-#, fuzzy
-#| msgid "Are you sure you want to delete user "
 msgid ""
 "\n"
 "    Are you sure you want to delete task?\n"
 "    "
-msgstr "Вы уверены, что хотите удалить пользователя"
+msgstr "Вы уверены, что хотите удалить задачу?"
 
 #: task_manager/templates/task_template/tasks.html:19
 msgid "Apply filters"
@@ -378,14 +376,10 @@ msgid "A user with that username already exists."
 msgstr "Пользователь с таким именем уже существует"
 
 #: task_manager/users/models.py:10
-#, fuzzy
-#| msgid "First name"
 msgid "First Name"
 msgstr "Имя"
 
 #: task_manager/users/models.py:15
-#, fuzzy
-#| msgid "Last name"
 msgid "Last Name"
 msgstr "Фамилия"
 
