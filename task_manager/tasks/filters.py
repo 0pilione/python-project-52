@@ -25,7 +25,7 @@ class TaskFilter(django_filters.FilterSet):
 
     executor = django_filters.ModelChoiceFilter(
         queryset=User.objects.all(),
-        label=_('Author'),
+        label=_('Executor'),
         widget=forms.Select(attrs={'class': 'form-select'})
     )
 
