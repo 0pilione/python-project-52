@@ -8,8 +8,8 @@
         </div>
     {% endif %}
     {% for field in form %}
-      <div class="input-group mb-3 bg-white text-dark rounded-3 p-1">
-        <span class="input-group-text">{{ field.label }}</span>
+      <div class="input-group mb-3 bg-dark text-dark rounded-3 p-1">
+        <div class="input-group-text">{{ field.label }}</div>
         <div class="form-control">
           {{ field }}
         </div>
