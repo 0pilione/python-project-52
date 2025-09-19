@@ -5,7 +5,7 @@ from .views import StatusCreate, StatusDelete, StatusUpdate, StatusView
 urlpatterns = [
     path('', StatusView.as_view(), name='status'),
     path(
-        'create/<int:pk>/update/',
+        '<int:pk>/update/',
         StatusUpdate.as_view(),
         name='update_status'),
     path('create/', StatusCreate.as_view(), name='create_status'),
