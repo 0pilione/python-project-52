@@ -215,7 +215,7 @@ msgstr "Задача успешно удалена"
 #: task_manager/templates/task_template/tasks.html:56
 #: task_manager/templates/user_template/delete.html:18
 msgid "Delete"
-msgstr "Удалить"
+msgstr "Да, удалить"
 
 #: task_manager/templates/base_template/index.html:8
 #: task_manager/templates/base_template/index.html:16
