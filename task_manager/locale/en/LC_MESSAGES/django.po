@@ -324,7 +324,7 @@ msgstr "Вы уверены, что хотите удалить задачу?"
 
 #: task_manager/templates/task_template/tasks.html:19
 msgid "Apply filters"
-msgstr "Применить фильтры"
+msgstr "Показать"
 
 #: task_manager/templates/task_template/tasks.html:25
 msgid "Create task"
