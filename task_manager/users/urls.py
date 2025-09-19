@@ -9,7 +9,7 @@ def get_url_patterns():
         path('', UsersView.as_view(), name='usrs'),
         path('create/', UserCreateView.as_view(), name='create_user'),
         path(
-            'create/<int:pk>/update/',
+            '<int:pk>/update/',
             UserUpdateView.as_view(),
             name='update_user'),
         path('<int:pk>/delete/', UserDeleteView.as_view(), name='delete_user'),
