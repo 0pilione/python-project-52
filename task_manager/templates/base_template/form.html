@@ -8,12 +8,12 @@
         </div>
     {% endif %}
     {% for field in form %}
-      <div class="input-group mb-3 bg-dark text-dark p-1">
-        <div class="input-group-text">{{ field.label }}</div>
-        <div class="form-control">
-          {{ field }}
-        </div>
-      </div>
+    <div class="input-group mb-3 bg-dark text-dark p-1">
+    <label class="input-group-text" for="{{ field.id_for_label }}">
+      {{ field.label }}
+    </label>
+    {{ field }}
+    </div>
       {% if field.errors %}
                 <div class="invalid-feedback d-block">
                     {% for error in field.errors %}
