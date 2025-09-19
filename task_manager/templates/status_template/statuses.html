@@ -26,7 +26,7 @@
         <th>{{ status.name}}</th>
         <th>{{ status.created_at }}</th>
         <th><p><a class="nav-link mb-2" href="{% url 'update_status' status.id %}">{% trans "Update" %}</a></p>
-        <p><a class="nav-link mb-2" href="{% url 'delete_status' status.id %}">{% trans "Delete" %}</a></th></p>
+        <p><a class="nav-link mb-2" href="{% url 'delete_status' pk=status.id %}">{% trans "Delete" %}</a></p></th>
         </tr>
         {% endfor %}
         {% endblock var_block %}
