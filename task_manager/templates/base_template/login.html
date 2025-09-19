@@ -15,15 +15,20 @@
 {% block content %}
 <h1 class="my-4">{% trans "Login" %}</h1>
 <main class="d-flex mx-auto px-3">
-<form method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="hidden" name="next" value="{{ request.GET.next }}">
-          <div class="d-grid mt-4">
-        <button type="submit" class="btn btn-primary py-2">
-            {% trans "Log in" %}
-        </button>
-      </div>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="form-group mb-3">
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field }}
+        </div>
+        {% endfor %}
+        <input type="hidden" name="next" value="{{ request.GET.next }}">
+        <div class="d-grid mt-4">
+            <button type="submit" class="btn btn-primary py-2">
+                {% trans "Log in" %}
+            </button>
+        </div>
     </form>
 </main>
 {% endblock %}
