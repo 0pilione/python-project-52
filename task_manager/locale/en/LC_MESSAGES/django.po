@@ -165,7 +165,7 @@ msgstr "Задача с таким именем уже существует"
 #: task_manager/templates/status_template/statuses.html:16
 #: task_manager/templates/task_template/tasks.html:32
 msgid "Name"
-msgstr "Название"
+msgstr "Имя"
 
 #: task_manager/tasks/forms.py:60 task_manager/tasks/forms.py:69
 #: task_manager/templates/task_template/task.html:25
