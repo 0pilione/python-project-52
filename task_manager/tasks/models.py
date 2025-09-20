@@ -6,7 +6,6 @@ from task_manager.labels.models import Labels
 from task_manager.status.models import Statuses
 
 
-
 class Tasks(models.Model):
     name = models.CharField(max_length=150)
     description = models.CharField(_("description"), max_length=1000)

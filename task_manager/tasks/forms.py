@@ -6,7 +6,9 @@ from task_manager.status.models import Statuses
 from task_manager.tasks.models import Tasks
 from django.contrib.auth import get_user_model
 
+
 User = get_user_model()
+
 
 class CreateTaskForm(forms.ModelForm):
 

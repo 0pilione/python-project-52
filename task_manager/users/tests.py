@@ -101,7 +101,6 @@ class UserDeleteTest(TestCase):
         )
         self.delete_url = reverse('delete_user', kwargs={'pk': self.user.pk})
 
-
     def test_authenticated_user_can_delete_self(self):
         self.client.force_login(self.user)
 

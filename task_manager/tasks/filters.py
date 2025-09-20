@@ -10,6 +10,7 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
+
 class TaskFilter(django_filters.FilterSet):
 
     labels = django_filters.ModelChoiceFilter(
