@@ -7,7 +7,6 @@ from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 
 from task_manager.mixins import MessageMixin
-from task_manager.tasks.models import Tasks
 
 from .forms import CreateStatusForm, UpdateStatusForm
 from .models import Statuses
