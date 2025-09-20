@@ -57,7 +57,10 @@ class UserUpdateView(LoginRequiredMixin, UserPassesTestMixin,
         return context
 
 
-class UserDeleteView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, DeleteView):
+class UserDeleteView(LoginRequiredMixin,
+                     UserPassesTestMixin,
+                     SuccessMessageMixin,
+                     DeleteView):
     model = get_user_model()
     template_name = 'user_template/delete.html'
     success_url = reverse_lazy('usrs')

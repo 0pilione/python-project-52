@@ -61,7 +61,8 @@ class TaskCreate(LoginRequiredMixin, MessageMixin, CreateView):
         return context
 
 
-class TaskDelete(LoginRequiredMixin, MessageMixin, UserPassesTestMixin, DeleteView):
+class TaskDelete(LoginRequiredMixin, MessageMixin,
+                 UserPassesTestMixin, DeleteView):
     model = Tasks
     template_name = 'task_template/task_delete.html'
     success_url = reverse_lazy('tasks')

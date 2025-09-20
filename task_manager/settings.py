@@ -68,7 +68,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'task_manager', 
+    'task_manager',
     'task_manager.status',
     'task_manager.tasks',
     'task_manager.labels',
@@ -131,7 +131,9 @@ if DATABASE_URL.startswith("sqlite"):
     }
 else:
     DATABASES = {
-        "default": dj_database_url.parse(DATABASE_URL, conn_max_age=600, ssl_require=not DEBUG)
+        "default": dj_database_url.parse(DATABASE_URL,
+                                         conn_max_age=600,
+                                         ssl_require=not DEBUG)
     }
 
 # Password validation

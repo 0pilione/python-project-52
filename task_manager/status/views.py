@@ -62,7 +62,7 @@ class StatusDelete(LoginRequiredMixin, MessageMixin, DeleteView):
     context_object_name = 'name'
     success_message = _('Status deleted successfully!')
     login_url = '/login/'
-    
+
     def form_valid(self, form):
         try:
             return super().form_valid(form)

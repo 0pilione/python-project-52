@@ -62,7 +62,7 @@ class LabelDelete(LoginRequiredMixin, MessageMixin, DeleteView):
     login_url = '/login/'
     success_url = reverse_lazy('labels')
     success_message = _('The label was successfully deleted')
-    
+
     def form_valid(self, form):
         try:
             return super().form_valid(form)
