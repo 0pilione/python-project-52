@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.db.models import ProtectedError
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
@@ -62,19 +63,13 @@ class StatusDelete(LoginRequiredMixin, MessageMixin, DeleteView):
     context_object_name = 'name'
     success_message = _('Status deleted successfully!')
     login_url = '/login/'
-
-    def dispatch(self, request, *args, **kwargs):
-        self.object = self.get_object()
-
-        if Tasks.objects.filter(status=self.object).exists():
+    
+    def form_valid(self, form):
+        try:
+            return super().form_valid(form)
+        except ProtectedError:
             messages.error(
-                request,
+                self.request,
                 _('Cannot delete status because it is in use')
             )
             return redirect(self.success_url)
-
-        return super().dispatch(request, *args, **kwargs)
-    
-    def delete(self, request, *args, **kwargs):
-        response = super().delete(request, *args, **kwargs)
-        return redirect(self.success_url)
