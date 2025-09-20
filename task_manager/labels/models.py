@@ -15,6 +15,5 @@ class Labels(models.Model):
             )
         return super().delete(*args, **kwargs)
 
-
     def __str__(self):
         return self.name
