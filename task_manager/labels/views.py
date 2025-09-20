@@ -2,6 +2,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
+from django.shortcuts import redirect
+from django.contrib import messages
+from django.db.models import ProtectedError
 
 from task_manager.mixins import MessageMixin
 
@@ -59,3 +62,13 @@ class LabelDelete(LoginRequiredMixin, MessageMixin, DeleteView):
     login_url = '/login/'
     success_url = reverse_lazy('labels')
     success_message = _('The label was successfully deleted')
+    
+    def form_valid(self, form):
+        try:
+            return super().form_valid(form)
+        except ProtectedError:
+            messages.error(
+                self.request,
+                _('Cannot delete label')
+            )
+            return redirect(self.success_url)
