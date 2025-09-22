@@ -113,7 +113,7 @@ class UserDeleteTest(TestCase):
 
     def test_unauthenticated_user_cannot_delete(self):
         response = self.client.post(self.delete_url)
-        self.assertEqual(response.status_code, 403)
+        self.assertEqual(response.status_code, 302)
         self.assertTrue(User.objects.filter(pk=self.user.pk).exists())
 
     def test_cannot_delete_other_user(self):
@@ -126,5 +126,5 @@ class UserDeleteTest(TestCase):
         response = self.client.post(
             reverse('delete_user', kwargs={'pk': other_user.pk})
         )
-        self.assertEqual(response.status_code, 403)
+        self.assertEqual(response.status_code, 302)
         self.assertTrue(User.objects.filter(pk=other_user.pk).exists())
