@@ -32,7 +32,6 @@ jobs:
           
       - name: Run tests with coverage
         run: |
-          export SECRET_KEY=${{ secrets.SECRET_KEY }}
           uv run coverage run --source=task_manager manage.py test
           uv run coverage xml -o coverage.xml
         env:
