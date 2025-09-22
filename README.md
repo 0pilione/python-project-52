@@ -60,3 +60,4 @@ Apply migrations:
 
 [![Actions Status](https://github.com/0pilione/python-project-52/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/0pilione/python-project-52/actions)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=0pilione_python-project-52&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=0pilione_python-project-52)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=0pilione_python-project-52&metric=coverage)](https://sonarcloud.io/summary/new_code?id=0pilione_python-project-52)
