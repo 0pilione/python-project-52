@@ -136,13 +136,13 @@ class LoginTests(TestCase):
         self.user = User.objects.create_user(first_name="John",
                                               last_name='Doughmaker',
                                               username="Mr",
-                                              password='test')
+                                              password='TestPassword123!')
 
     def test_redirect_with_next_param(self):
         response = self.client.post(
             reverse('login') + "?next=/",
             {"username": "Mr",
-             "password": "test",
+             "password": "TestPassword123!",
              }
         )
         self.assertRedirects(response, "/")
@@ -151,7 +151,7 @@ class LoginTests(TestCase):
         response = self.client.post(
             reverse('login'),
             {"username": "Mr", 
-             "password": "test",
+             "password": "TestPassword123!",
              }
         )
         self.assertRedirects(response, reverse("home"))
@@ -160,3 +160,4 @@ class LoginTests(TestCase):
         response = self.client.get(reverse('login'))
         self.assertEqual(response.status_code, 200)
         self.assertIn('form', response.context)
+
