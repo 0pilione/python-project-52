@@ -136,13 +136,13 @@ class LoginTests(TestCase):
         self.user = User.objects.create_user(first_name="John",
                                               last_name='Doughmaker',
                                               username="Mr",
-                                              password='111')
+                                              password='test')
 
     def test_redirect_with_next_param(self):
         response = self.client.post(
             reverse('login') + "?next=/",
             {"username": "Mr",
-             "password": "111",
+             "password": "test",
              }
         )
         self.assertRedirects(response, "/")
