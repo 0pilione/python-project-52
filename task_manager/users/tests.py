@@ -128,3 +128,33 @@ class UserDeleteTest(TestCase):
         )
         self.assertEqual(response.status_code, 302)
         self.assertTrue(User.objects.filter(pk=other_user.pk).exists())
+
+
+class LoginTests(TestCase):
+    
+    def setUp(self):
+        self.user = User.objects.create_user(first_name="John",
+                                              last_name='Doughmaker',
+                                              username="Mr",
+                                              password='111')
+
+    def test_redirect_with_next_param(self):
+        response = self.client.post(
+            reverse('login') + "?next=/",
+            {"username": "Mr",
+             "password": "111",
+             }
+        )
+        self.assertRedirects(response, "/")
+
+    def test_redirect_without_next_param(self):
+        response = self.client.post(
+            reverse('login'),
+            {"username": "Mr", "password": "111"}
+        )
+        self.assertRedirects(response, reverse("home"))
+
+    def test_login_page_contains_form_in_context(self):
+        response = self.client.get(reverse('login'))
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('form', response.context)
