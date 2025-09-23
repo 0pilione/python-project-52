@@ -150,7 +150,9 @@ class LoginTests(TestCase):
     def test_redirect_without_next_param(self):
         response = self.client.post(
             reverse('login'),
-            {"username": "Mr", "password": "111"}
+            {"username": "Mr", 
+             "password": "test",
+             }
         )
         self.assertRedirects(response, reverse("home"))
 
