@@ -2,10 +2,8 @@ from django.urls import path
 
 
 def get_url_patterns():
-    from task_manager.users.views import (UserCreateView,
-                        UserDeleteView,
-                        UsersView,
-                        UserUpdateView)
+    from task_manager.users.views import (UserCreateView, UserDeleteView,
+                                          UsersView, UserUpdateView)
 
     return [
         path('', UsersView.as_view(), name='usrs'),

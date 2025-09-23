@@ -406,7 +406,7 @@ msgid "You do not have permission to edit other users"
 msgstr "У вас нет прав для изменения другого пользователя"
 
 #: task_manager/users/tests.py:113
-msgid "User succesfully deleted"
+msgid "User successfully deleted"
 msgstr "Пользователь успешно удален"
 
 #: task_manager/users/views.py:26

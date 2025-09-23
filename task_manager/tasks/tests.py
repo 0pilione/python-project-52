@@ -3,7 +3,7 @@ from django.test import TestCase
 from django.urls import reverse
 
 from task_manager.labels.models import Labels
-from task_manager.status.models import Statuses
+from task_manager.statuses.models import Statuses
 
 from .filters import TaskFilter
 from .models import Tasks

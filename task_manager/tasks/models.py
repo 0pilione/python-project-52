@@ -3,7 +3,7 @@ from django.conf import settings
 from django.utils.translation import gettext_lazy as _
 
 from task_manager.labels.models import Labels
-from task_manager.status.models import Statuses
+from task_manager.statuses.models import Statuses
 
 
 class Tasks(models.Model):

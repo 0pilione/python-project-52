@@ -1,5 +1,5 @@
 from task_manager.labels.models import Labels
-from task_manager.status.forms import CreateStatusForm
+from task_manager.statuses.forms import CreateStatusForm
 
 
 class CreateLabelForm(CreateStatusForm):
